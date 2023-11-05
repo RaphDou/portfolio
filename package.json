@@ -8,6 +8,9 @@
   "keywords": [],
   "author": "raph",
   "license": "ISC",
+  "engines": {
+    "node": ">=14.20.1"
+  },
   "dependencies": {
     "bootstrap": "^5.3.0-alpha3",
     "ejs": "^3.1.9",
