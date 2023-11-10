@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const router = express.Router();
 const port = 3000;
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
@@ -16,16 +15,6 @@ app.listen(port, () => {
 app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
-
-// Route pour page accueil
-app.get('/', function (req, res) {
-  res.render('accueil.ejs');
-});
-
-// Route pour page portfolio
-app.get('/portfolio', function (req, res) {
-  res.render('portfolio', { projets });
-});
 
 const projets = [
   {
@@ -48,30 +37,33 @@ const projets = [
   },
   {
     id: 4,
-    titre: 'Premier travail pratique en intégration web',
-    description: 'Un travail assez basique qui comporte des éléments HTML et CSS de bas niveau, accompagné de couleurs pouvant laisser à désirer.',
-    image: '/images/epicerie.jpg'
-  },
-  {
-    id: 5,
     titre: 'Projet Pokedex',
     description: 'Projet Next.js avec une liaison à une API existante pour afficher des informations sur les Pokémon.',
     image: '/images/pokedex.jpg'
   },
   {
-    id: 6,
+    id: 5,
     titre: 'Projet Snippets',
     description: 'Un projet de gestion de code snippets pour les développeurs.',
     image: '/images/snippets.png'
   },
   {
-    id: 7,
-    titre: 'Projet Ventes de Produits',
+    id: 6,
+    titre: 'Projet Ventes de Produits fictif',
     description: 'Un projet Next.js avec une API pour gérer les ventes de produits fictifs en ligne.',
     image: '/images/ventes.jpg'
   }
 ];
 
+// Route pour page accueil
+app.get('/', function (req, res) {
+  res.render('accueil.ejs');
+});
+
+// Route pour page portfolio
+app.get('/portfolio', function (req, res) {
+  res.render('portfolio', { projets });
+});
 
 app.get('/portfolio/:id', function (req, res) {
   const id = req.params.id;

@@ -1,118 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-  </head>
-  <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary border border-black">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">Raphaël Doucet</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/"
-                >Accueil</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio">Portfolio</a>
-            </li>
-          </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/public/css/style.css" />
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+  
+
+  
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    .project-details {
+      padding: 20px;
+      position: relative;
+      background: linear-gradient(45deg, var(--random-color-1), var(--random-color-2));
+      background-size: 200% 200%;
+      animation: gradientRotation 5s linear infinite; /* Réglez la durée de l'animation comme vous le souhaitez */
+      z-index: 1;
+    }
+  
+    .project-details h2,
+    .project-details p {
+      color: #fff;
+      font-weight: bold; /* Ajout du style gras */
+    }
+  
+    @keyframes gradientRotation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary border border-black">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Raphaël Doucet</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/portfolio">Portfolio</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <a href="/portfolio" class="btn btn-primary mb-5">Retour au Portfolio</a>
+    <div class="project-card">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="<%= projet.image %>" alt="<%= projet.titre %>" />
+        </div>
+        <div class="col-md-6  project-details">
+          <h2><%= projet.titre %></h2>
+          <p><%= projet.description %></p>
         </div>
       </div>
-    </nav>
+    </div>
+  </div>
 
-    <div class="container mt-5">
-      <div class="card p-3">
-        <div class="row">
-          <div class="col-md-6">
-            <img class="border border-black" src="<%= projet.image %>" alt="<%= projet.titre %>" style="width: 100%; height:30rem"/>
+  <footer class="fixed-bottom">
+    <div class="card text-center">
+      <div class="card-body align-items-end">
+        <div class "container">
+          <script>
+            function getRandomColor() {
+              const letters = '0123456789ABCDEF';
+              let color = '#';
+              for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+              }
+              return color;
+            }
+            document.documentElement.style.setProperty('--random-color-1', getRandomColor());
+            document.documentElement.style.setProperty('--random-color-2', getRandomColor());
+          </script>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <h4>Liens sociaux</h4>
+            <ul class="list-unstyled">
+              <li><a href="https://www.instagram.com/raphdoucet_44/">Instagram</a></li>
+              <li><a href="https://www.facebook.com/raphael.doucet.39/">Facebook</a></li>
+            </ul>
           </div>
-          <div class="col-md-6 p-3">
-            <h2><%= projet.titre %></h2>
-            <p><%= projet.description %></p>
+          <div class="col-md-4">
+            <h4>Menu</h4>
+            <ul class="list-unstyled">
+              <li><a href="/">Accueil</a></li>
+              <li><a href="/portfolio">Portfolio</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4>Contactez-moi</h4>
+            <ul class="list-unstyled">
+              <li><a href="tel:123-456-7890">418-518-0913</a></li>
+              <li><a href="mailto:raphael120701@gmail.com">raphael120701@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-12">
+            <p>Créé le 04/2023</p>
           </div>
         </div>
       </div>
     </div>
-    
-          
-    
-    
+  </footer>
+</body>
 
-    <footer class="fixed-bottom">
-      <div class="card text-center">
-        <div class="card-body align-items-end">
-          <div class="container">
-            <div class="row text-center">
-              <div class="col-md-4">
-                <h4>Liens sociaux</h4>
-                <ul class="list-unstyled">
-                  <li>
-                    <a href="https://www.instagram.com/raphdoucet_44/"
-                      >Instagram</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.facebook.com/raphael.doucet.39/"
-                      >Facebook</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <h4>Menu</h4>
-                <ul class="list-unstyled">
-                  <li><a href="/">Accueil</a></li>
-                  <li><a href="/portfolio">Portfolio</a></li>
-                  <li><a href="/contact">Contact</a></li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <h4>Contactez-moi</h4>
-                <ul class="list-unstyled">
-                  <li><a href="tel:123-456-7890">418-518-0913</a></li>
-                  <li>
-                    <a href="mailto:raphael120701@gmail.com"
-                      >raphael120701@gmail.com</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="row text-center">
-              <div class="col-md-12">
-                <p>Créer le 04/2023</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
 </html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Ajoutez votre style CSS personnalisé ici */
+    .card {
+      margin-bottom: 20px;
+      border: none;
+      /* Élimine la bordure autour des cartes */
+    }
+
+    .portfolio-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      /* Ajustez la hauteur minimale souhaitée pour centrer les projets */
+    }
+
+    .carousel {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .carousel-inner {
+      display: flex;
+    }
+
+    .carousel-item {
+      flex: 0 0 100%;
+      background-color: #f8f8f8;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 300px;
+      /* Ajustez la hauteur souhaitée */
+      object-fit: cover;
+    }
+
+    .carousel-button {
+      margin: 5px;
+      cursor: pointer;
+      color: black;
+      /* Couleur des flèches en noir */
+    }
+  </style>
+</head>
+
+<body style="background-color: #f8f8f8;">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary border border-black">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Raphaël Doucet</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/portfolio">Portfolio</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h1 class="text-center">Mes réalisations:</h1>
+  </div>
+
+  <!-- Centrez le contenu du portfolio sans affecter les flèches -->
+  <div class="portfolio-container">
+    <div id="portfolioCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Slides du carrousel -->
+      <div class="carousel-inner">
+        <% for (let i=0; i < projets.length; i++) { %>
+          <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card bg-light">
+                  <a href="/portfolio/<%= projets[i].id %>">
+                    <img src="<%= projets[i].image %>" class="card-img-top" alt="<%= projets[i].titre %>"
+                      style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="card-body">
+                      <a href="/portfolio/<%= projets[i].id %>"> <!-- Ajoutez un lien hypertexte autour du titre -->
+                        <h5 class="card-title">
+                          <%= projets[i].titre %>
+                        </h5>
+                      </a>
+                      <p class="card-text">
+                        <%= projets[i].description %>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flèches de navigation en dehors des cartes -->
+  <a class="carousel-control-prev carousel-button" href="#portfolioCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+    <span class="sr-only">Précédent</span>
+  </a>
+  <a class="carousel-control-next carousel-button" href="#portfolioCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+    <span class="sr-only">Suivant</span>
+  </a>
+  </div>
+
+  <footer>
+    <div class="card text-center">
+      <div class="card-body align-items-end">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-4">
+              <h4>Liens sociaux</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="https://www.instagram.com/raphdoucet_44/" target="_blank">Instagram</a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/raphael.doucet.39/" target="_blank">Facebook</a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/raphaëldoucet/" target="_blank">LinkedIn</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4>Menu</h4>
+              <ul class="list-unstyled">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4>Contactez-moi</h4>
+              <ul class="list-unstyled">
+                <li><a href="tel:123-456-7890">418-518-0913</a></li>
+                <li>
+                  <a href="mailto:raphael120701@gmail.com">raphael120701@gmail.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-md-12">
+              <p>Mis à jour 2023-11-05</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
