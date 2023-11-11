@@ -1,0 +1,176 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #111;
+    color: #fff;
+    padding-bottom: 100px;
+    overflow-x: hidden;
+}
+
+.navbar {
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  
+
+nav.navbar {
+    background-color: #111;
+}
+
+nav.navbar a.navbar-brand,
+nav.navbar a.nav-link {
+    color: #fff !important;
+}
+
+.border {
+    border: none !important;
+}
+
+section {
+    min-height: 500px;
+}
+
+.card {
+    background-color: #111;
+    border: 2px solid #111;
+    margin-top: 20px;
+}
+
+.card h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.card p {
+    color: #fff;
+    font-size: 18px;
+}
+
+footer {
+    position: fixed;
+}
+
+footer .list-unstyled a {
+    color: #fff !important;
+}
+
+footer .list-unstyled {
+    color: #fff;
+}
+
+footer .card {
+    background-color: #111;
+    color: #fff;
+    border: 2px solid #111;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    color: #fff;
+}
+
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.5);
+    display: inline-block;
+    margin: 70px;
+    transition: filter 0.3s, background-color 0.3s;
+    pointer-events: auto;
+    position: relative;
+    border-radius: 20px;
+
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+    filter: brightness(0.5) blur(2px);
+    pointer-events: none;
+}
+
+.swiper-slide:hover {
+    filter: brightness(1);
+    background-color: #007BFF;
+}
+
+.swiper-slide a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.titres {
+    text-transform: uppercase;
+    color: #111;
+    background: #fff;
+    padding: 7px 18px 7px 25px;
+    display: inline-block;
+    border-radius: 0 20px 20px 0px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.description {
+
+    overflow: hidden;
+    font-weight:600;
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    z-index: 2;
+    position: relative;
+}
+
+.card-body-carrousel {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.h1-title{
+font-size: 90px;
+}
+
+#cursor-tracker {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid #ffffff; /* Bordure blanche */
+    border-radius: 50%; /* Coins arrondis pour créer un cercle */
+    pointer-events: none; /* Pour permettre au curseur de passer à travers */
+    transition: all 0.2s ease; /* Animation de transition */
+    z-index: 1000; /* Valeur à ajuster selon votre mise en page */
+  }
+
+  .card-carrousel {
+    border: none; /* Enlever la bordure */
+    position: relative;
+  }
+  
+  .projet-titre {
+    font-size: 75px; /* Ajustez la taille du titre selon vos préférences */
+    font-weight:500; /* Poids de la police (ajustez selon vos préférences) */
+    position: absolute;
+    bottom: -50px; /* Ajustez la valeur négative pour déplacer davantage vers le bas */
+    left: 90%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+  

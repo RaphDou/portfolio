@@ -16,45 +16,6 @@ app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
-const projets = [
-  {
-    id: 1,
-    titre: 'Jeu de mémoire',
-    description: 'Projet de programmation JS en duo pour créer un jeu de mémoire, renforçant les compétences en résolution de problèmes et en travail d\'équipe.',
-    image: '/images/cartes.jpg'
-  },
-  {
-    id: 2,
-    titre: 'Travail final Figma',
-    description: 'Travail de conception graphique final réalisé en utilisant Figma pour créer une compagnie fictive. Expérience valorisante de conception, mettant en valeur les compétences en créativité et en design d\'interface utilisateur.',
-    image: '/images/figma.jpg'
-  },
-  {
-    id: 3,
-    titre: 'Contrat d\'offre de service',
-    description: 'Un travail en équipe de trois sur un projet fictif de contrat de prestation d\'offre de service, valorisant le développement de compétences clés en communication, négociation et travail d\'équipe.',
-    image: '/images/contrat.jpg'
-  },
-  {
-    id: 4,
-    titre: 'Projet Pokedex',
-    description: 'Projet Next.js avec une liaison à une API existante pour afficher des informations sur les Pokémon.',
-    image: '/images/pokedex.jpg'
-  },
-  {
-    id: 5,
-    titre: 'Projet Snippets',
-    description: 'Un projet de gestion de code snippets pour les développeurs.',
-    image: '/images/snippets.png'
-  },
-  {
-    id: 6,
-    titre: 'Projet Ventes de Produits fictif',
-    description: 'Un projet Next.js avec une API pour gérer les ventes de produits fictifs en ligne.',
-    image: '/images/ventes.jpg'
-  }
-];
-
 // Route pour page accueil
 app.get('/', function (req, res) {
   res.render('accueil.ejs');
@@ -94,12 +55,14 @@ var transport = nodemailer.createTransport({
 });
 
 // Fonction pour envoyer un courriel
-const sendEmail = (title, content, recipient) => {
+const sendEmail = (title, message, recipient, boisson) => {
+  const messageContent = `<p>${message}</p><p>Boisson préférée : ${boisson}</p>`;
+  
   transport.sendMail({
     from: mail_sender,
     to: recipient,
     subject: title,
-    html: content
+    html: messageContent
   }, function(err, info) {
     if (err) {
       console.log(err);
@@ -114,7 +77,9 @@ app.post('/contact', function (req, res) {
   const nom = req.body.nom;
   const email = req.body.email;
   const message = req.body.message;
-  sendEmail('Nouveau message de ' + nom, '<p>' + message + '</p>', email);
+  const boisson = req.body.boisson; // Récupérer la boisson préférée
+
+  sendEmail('Nouveau message de ' + nom, message, email, boisson);
   res.redirect('/');
 });
 
