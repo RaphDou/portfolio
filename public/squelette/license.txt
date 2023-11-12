@@ -1,0 +1,11 @@
+Model Information:
+* title:	Esqueleto Curioso
+* source:	https://sketchfab.com/3d-models/esqueleto-curioso-044c4a6a9f81439bb550c908b0347aa2
+* author:	carolinne752 (https://sketchfab.com/carolinne752)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Esqueleto Curioso" (https://sketchfab.com/3d-models/esqueleto-curioso-044c4a6a9f81439bb550c908b0347aa2) by carolinne752 (https://sketchfab.com/carolinne752) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
