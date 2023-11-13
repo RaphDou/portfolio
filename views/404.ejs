@@ -1,57 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
-    <style>
-      body {
-        font-family: 'Montserrat', sans-serif;
-      }
-    </style>
-  </head>
-  <body  style="background-color: #f8f8f8;">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
 
-    <nav  style="background-color: #f8f8f8;" class="navbar navbar-expand-lg bg-body-tertiary border border-black">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">Raphaël Doucet</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/"
-                >Accueil</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio">Portfolio</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<%- include('includes/head.ejs') %>
+
+  <body  style="background-color: #f8f8f8;">
+ 
+    <%- include('includes/navigation.ejs') %>
 
       <div class="container-fluid p-5">
         <div class="row justify-content-center text-center">
@@ -63,51 +17,7 @@
         </div>
       </div>
 
-      <footer  class="fixed-bottom">
-        <div class="card text-center">
-          <div class="card-body align-items-end">
-            <div class="container">
-              <div class="row text-center">
-                <div class="col-md-4">
-                  <h4>Liens sociaux</h4>
-                  <ul class="list-unstyled">
-                    <li>
-                      <a href="https://www.instagram.com/raphdoucet_44/" target="_blank">Instagram</a>
-                    </li>
-                    <li>
-                      <a href="https://www.facebook.com/raphael.doucet.39/" target="_blank">Facebook</a>
-                    </li>
-                    <li>
-                      <a href="https://www.linkedin.com/in/raphaëldoucet/" target="_blank">LinkedIn</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md-4">
-                  <h4>Menu</h4>
-                  <ul class="list-unstyled">
-                    <li><a href="/">Accueil</a></li>
-                    <li><a href="/portfolio">Portfolio</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                  </ul>
-                </div>
-                <div class="col-md-4">
-                  <h4>Contactez-moi</h4>
-                  <ul class="list-unstyled">
-                    <li><a href="tel:123-456-7890">418-518-0913</a></li>
-                    <li>
-                      <a href="mailto:raphael120701@gmail.com">raphael120701@gmail.com</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="row text-center">
-                <div class="col-md-12">
-                  <p>Mis à jour 2023-11-05</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <%- include('includes/footer.ejs') %>
+
   </body>
 </html>

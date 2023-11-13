@@ -1,9 +1,14 @@
 const express = require('express');
 const app = express();
-const path = require('path');
 const port = 3000;
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const errorController = require("./controllers/errorController");
+const weatherController = require('./controllers/weatherController');
+
+require('dotenv').config();
+
+app.use('/', weatherController);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -21,12 +26,7 @@ app.get('/', function (req, res) {
   res.render('accueil.ejs');
 });
 
-// Route pour page portfolio
-app.get('/portfolio', function (req, res) {
-  res.render('portfolio', { projets });
-});
-
-app.get('/portfolio/:id', function (req, res) {
+app.get('/projet/:id', function (req, res) {
   const id = req.params.id;
   var projet = projets.find(p => p.id == id);
   if (projet) {
@@ -86,3 +86,10 @@ app.post('/contact', function (req, res) {
 app.use(function(req, res, next) {
   res.status(404).render('404.ejs');
 });
+
+// gestion des erreurs
+app.use(errorController.logErrors);
+
+// gestion des erreurs 404
+app.use(errorController.get404);
+
