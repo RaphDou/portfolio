@@ -2,8 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const cursorTracker = document.getElementById("cursor-tracker");
 
   function updateCursorPosition(e) {
-    cursorTracker.style.left = e.clientX + "px";
-    cursorTracker.style.top = e.clientY + "px";
+    if (e) {
+      cursorTracker.style.left = e.clientX + "px";
+      cursorTracker.style.top = e.clientY + "px";
+    }
   }
 
   document.addEventListener("mousemove", updateCursorPosition);
@@ -13,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", () => {
     clearTimeout(isScrolling);
 
-    const scrollY = window.scrollY || window.pageYOffset;
+    const scrollY = window.scrollY;
     cursorTracker.style.top = `${scrollY}px`;
 
     isScrolling = setTimeout(() => {
@@ -21,8 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 150);
   });
 
-  // Ajoutez un gestionnaire d'événement de chargement initial
-  window.addEventListener("load", () => {
+  document.addEventListener("mousemove", (event) => {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
     cursorTracker.style.left = `${mouseX}px`;

@@ -9,5 +9,9 @@ window.addEventListener("resize", function () {
 function adjustVideoHeight() {
   var videoContainer = document.getElementById("video-container");
   var contentInner = document.querySelector(".content-inner");
-  videoContainer.style.height = contentInner.offsetHeight + "px";
+
+  // Vérifiez si videoContainer et contentInner existent avant d'accéder à leurs propriétés
+  if (videoContainer && contentInner) {
+    videoContainer.style.height = contentInner.offsetHeight + "px";
+  }
 }
