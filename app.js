@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');  // Ajout du middleware CORS
 const port = 3000;
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
@@ -7,6 +8,9 @@ const errorController = require("./controllers/errorController");
 const weatherController = require('./controllers/weatherController');
 
 require('dotenv').config();
+
+// Middleware CORS
+app.use(cors());
 
 app.use('/', weatherController);
 
@@ -92,4 +96,3 @@ app.use(errorController.logErrors);
 
 // gestion des erreurs 404
 app.use(errorController.get404);
-
