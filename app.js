@@ -9,6 +9,8 @@ const weatherController = require('./controllers/weatherController');
 
 require('dotenv').config();
 
+app.use(express.static('public'));
+
 // Middleware CORS
 app.use(cors());
 
