@@ -1,40 +1,44 @@
 <section class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body p-5">
-            <h2 class="text-center mb-4">Qu'on aille prendre un café</h2>
-            <p class="text-center mb-4">Ou un chocolat chaud <span class="emoji" role="img" aria-label="Pensif">🤔</span></p>
-            <form action="/contact" method="post">
-              <div class="mb-3">
-                <label for="nom" class="form-label">Nom :</label>
-                <input type="text" class="form-control" id="nom" name="nom" required>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Adresse courriel :</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label">Message :</label>
-                <textarea id="message" class="form-control" name="message" required></textarea>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Ta boisson préférée :</label>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body p-5">
+          <h2 class="text-center mb-4">Qu'on aille prendre un café</h2>
+          <p class="text-center mb-4">Ou un chocolat chaud <span class="emoji" role="img" aria-label="Pensif">🤔</span>
+          </p>
+          <form action="/contact" method="post">
+            <div class="mb-3">
+              <label for="nom" class="form-label">Nom :</label>
+              <input type="text" class="form-control" id="nom" name="nom" required autocomplete="name">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Adresse courriel :</label>
+              <input type="email" class="form-control" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message :</label>
+              <textarea id="message" class="form-control" name="message" required></textarea>
+            </div>
+            <div class="mb-3">
+              <fieldset>
+                <legend class="form-label">Ta boisson préférée :</legend>
                 <div class="form-check">
-                  <input type="radio" class="form-check-input" id="café!" name="boisson" value="café!" required>
-                  <label class="form-check-label" for="café!">Café ☕</label>
+                  <input type="radio" class="form-check-input" id="cafe" name="boisson" value="café!" required>
+                  <label class="form-check-label" for="cafe">Café ☕</label>
                 </div>
                 <div class="form-check">
-                  <input type="radio" class="form-check-input" id="chocolat_chaud!" name="boisson" value="chocolat_chaud!" required>
-                  <label class="form-check-label" for="chocolat_chaud!">Chocolat chaud 🍫☕</label>
+                  <input type="radio" class="form-check-input" id="chocolat_chaud" name="boisson"
+                    value="chocolat_chaud!" required>
+                  <label class="form-check-label" for="chocolat_chaud">Chocolat chaud 🍫☕</label>
                 </div>
-              </div>
-              <div class="text-center">
-                <button class="btn btn-feedback" type="submit">Soumettre</button>
-              </div>              
-            </form>
-          </div>
+              </fieldset>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-feedback" type="submit">Soumettre</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
