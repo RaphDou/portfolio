@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const description = data.weather[0].description;
         const weatherEmoji = getWeatherEmoji(data.weather[0].main);
 
+        console.log('Données météorologiques reçues :', data); // Ajout du console.log
+
         // Mise à jour du contenu de la balise li spécifique à la météo
         weatherInfoElement.innerHTML = `Il fait actuellement ${temperature}°C à Québec. <span>${weatherEmoji}</span>`;
       } else {
