@@ -1,2 +1,2 @@
 # portfolio
-update de mo portfolio, beaucoup d'upgrade à faire encore!
+update de mon portfolio, beaucoup d'upgrade à faire encore!
