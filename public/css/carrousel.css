@@ -58,5 +58,16 @@
 .title {
     font-size: 1.3rem;
     font-weight: bold;
-    color: #111; /* Couleur du titre */
+    color: #ececec; /* Couleur du titre */
 }
+/* Style pour les liens dans la section .text-container */
+.text-container a {
+    color: inherit; /* Couleur de texte par défaut */
+    transition: color 0.3s ease; /* Animation de transition pour la couleur */
+  }
+  
+  /* Style pour les liens au survol */
+  .text-container a:hover {
+    color: #19e3fd; /* Changer la couleur au survol (rouge dans cet exemple) */
+  }
+  
