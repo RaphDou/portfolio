@@ -63,10 +63,10 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 7,
       titre: "Company's API Development",
-      description: "Our team worked full-time to develop a real company's API for rebuilding their website.",
+      description: "Our team worked full-time to develop a real company's API for building their website.",
       image: "/images/qc.jpg",
       technologies: ["JavaScript, Node.js, Express.js, MongoDB"],
-      resultatsPersonnels: "Valuable experience in full-time project development, gaining insights into real-world website rebuilding processes.",
+      resultatsPersonnels: "Valuable experience in full-time project development, gaining insights into real-world website building.",
       lien: "https://documenter.getpostman.com/view/27391458/2s9YeBfZhu#c486b50d-042b-48e1-9fe2-f128def284a3"
     },
     {
@@ -96,22 +96,23 @@ document.addEventListener("DOMContentLoaded", function () {
     slide.className = "swiper-slide";
 
     const content = `
-      <div class="card-body-carrousel">
-        <div class="text-container">
-          <h5 class="projet-titre">${projet.lien ? `<a href="${projet.lien}" target="_blank">${projet.titre}</a>` : projet.titre}</h5>
-          <ul>
-            <li><span class="title">Description:</span> <span class="description_project">${projet.description}</span></li>
-            <br>
-            <li><span class="title">Technologies used:</span> <span class="technologies">${projet.technologies.join(", ")}</span></li>
-            <br>
-            <li><span class="title">Personal results:</span> <span class="resultats-personnels">${projet.resultatsPersonnels}</span></li>
-          </ul>
-        </div>
-        <div class="image-container">
-          <img src="${projet.image}" alt="${projet.titre}" class="project-image">
-        </div>
+    <div class="card-body-carrousel ${projet.lien ? 'clickable-card' : ''}">
+      <div class="text-container">
+        <h5 class="projet-titre">${projet.lien ? `<a href="${projet.lien}" target="_blank">${projet.titre}</a>` : projet.titre}</h5>
+        <ul>
+          <li><span class="title">Description:</span> <span class="description_project">${projet.description}</span></li>
+          <br>
+          <li><span class="title">Technologies used:</span> <span class="technologies">${projet.technologies.join(", ")}</span></li>
+          <br>
+          <li><span class="title">Personal results:</span> <span class="resultats-personnels">${projet.resultatsPersonnels}</span></li>
+        </ul>
       </div>
-    `;
+      <div class="image-container">
+        <img src="${projet.image}" alt="${projet.titre}" class="project-image">
+      </div>
+    </div>
+  `;
+  
 
     slide.innerHTML = content;
     swiperWrapper.appendChild(slide);

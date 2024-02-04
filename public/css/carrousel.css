@@ -68,6 +68,14 @@
   
   /* Style pour les liens au survol */
   .text-container a:hover {
-    color: #be0b05; /* Changer la couleur au survol (rouge dans cet exemple) */
+    color: #111111; /* Changer la couleur au survol (rouge dans cet exemple) */
+  }
+  
+  .clickable-card {
+    border: 10px solid transparent; /* Ajoutez un contour transparent par défaut */
+  }
+  
+  .clickable-card:hover {
+    border-color: #be0b05; /* Changez la couleur du contour au survol (rouge dans cet exemple) */
   }
   
