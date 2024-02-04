@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var ageElement = document.getElementById('age');
-    ageElement.textContent = 'J\'ai ' + age + ' ans, ' + mois + ' mois et ' + jours + ' jours';
+    ageElement.textContent = 'I am ' + age + ' years old, ' + mois + ' months, and ' + jours + ' days';
   }
 
   // Appeler la fonction pour mettre à jour l'âge

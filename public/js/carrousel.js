@@ -2,73 +2,89 @@ document.addEventListener("DOMContentLoaded", function () {
   const projets = [
     {
       id: 1,
-      titre: "Jeu de mémoire",
+      titre: "Memory Game",
       description:
-        "Projet de programmation JS en duo pour créer un jeu de mémoire.",
+        "JS programming project in duo to create a memory game.",
       image: "/images/cartes.jpg",
       technologies: ["JavaScript, HTML, CSS"],
       resultatsPersonnels:
-        "Première expérience de programmation JS et de GitHub, pas mon meileur projet, mais bon!",
+        "First experience in JS programming and GitHub, not my best project lol!",
     },
     {
       id: 2,
       titre: "SAPAR",
       description:
-        "Travail de conception graphique final réalisé en utilisant Figma pour créer une compagnie fictive.",
+        "Final graphic design work done using Figma to create a fictional company.",
       image: "/images/figma.jpg",
       technologies: ["Figma"],
       resultatsPersonnels:
-        "Expérience valorisante, mettant en valeur les compétences en créativité et en design d'interface.",
+        "Rewarding experience, showcasing creativity and interface design skills.",
     },
     {
       id: 3,
-      titre: "Prise de besoin",
+      titre: "Contract",
       description:
-        "Un travail en équipe de trois sur un projet fictif de contrat de prestation d'offre de service.",
+        "A team work of three on a fictional project of a service offer contract.",
       image: "/images/contrat.jpg",
       technologies: ["Word"],
       resultatsPersonnels:
-        "Développement de compétences clés en communication, négociation et travail d'équipe.",
+        "Development of key skills in communication, negotiation, and teamwork.",
     },
     {
       id: 4,
       titre: "Projet Pokedex",
       description:
-        "Projet Next.js avec une liaison à une API existante pour afficher des informations sur les Pokémon.",
+        "Next.js project with a link to an existing API to display a library of pokemon.",
       image: "/images/pokedex.jpg",
       technologies: ["Next.js"],
       resultatsPersonnels:
-        "Bonne apprentisage de Next.js, de la bibliothèque MUI et du atomic design.",
+        "Good learning of Next.js, MUI library, and atomic design.",
     },
     {
       id: 5,
       titre: "Projet Snippets",
       description:
-        "Un projet de gestion d'extraits de code et de notes personnel attachés à des étiquettes.",
+        "A project to manage code snippets and personal notes attached to tags.",
       image: "/images/snippets.png",
       technologies: ["JavaScript, HTML, CSS, node.js, express.js"],
       resultatsPersonnels:
-        "Première utilisation de node.js et d'express!",
+        "First use of node.js and express!",
     },
     {
       id: 6,
-      titre: "API et React",
+      titre: "API and React",
       description:
-        "Un projet Next.js avec une API pour gérer les ventes de produits fictifs en ligne.",
+        "Next.js project with an API to manage fictitious online product sales.",
       image: "/images/ventes.jpg",
       technologies: ["JavaScript"],
       resultatsPersonnels:
-        "Bonne gestion des tâches, du temps et fonctions avancées avec GitHub",
+        "Good task management, time, and advanced functions with GitHub.",
     },
     {
       id: 7,
-      titre: "À venir",
-      description: "Qui sait ce que m'attend!",
+      titre: "Company's API Development",
+      description: "Our team worked full-time to develop a real company's API for rebuilding their website.",
+      image: "/images/qc.jpg",
+      technologies: ["JavaScript, Node.js, Express.js, MongoDB"],
+      resultatsPersonnels: "Valuable experience in full-time project development, gaining insights into real-world website rebuilding processes."
+    },
+    {
+      id: 8,
+      titre: "WordPress shop",
+      description: "Building a WordPress website using WooCommerce to create a working e-commerce shop.",
+      image: "/images/wordpress.png",
+      technologies: ["WordPress, WooCommerce"],
+      resultatsPersonnels: "Significant learning in CMS website building and leveraging plugins for enhanced functionality."
+    },
+        {
+      id: 9,
+      titre: "Future projects",
+      description: "Who knows what awaits me!",
       image: "/images/idk.jpg",
       technologies: ["🤷"],
       resultatsPersonnels:
-        "Amélioration des compétences en résolution de problèmes et travail d'équipe.",
-    },
+        "We'll see!",
+    }
   ];
 
   const swiperWrapper = document.querySelector(".swiper-wrapper");
@@ -84,9 +100,9 @@ document.addEventListener("DOMContentLoaded", function () {
         <ul>
           <li><span class="title">Description:</span> <span class="description_project">${projet.description}</span></li>
           <br>
-          <li><span class="title">Technologies utilisées:</span> <span class="technologies">${projet.technologies.join(", ")}</span></li>
+          <li><span class="title">Technologies used:</span> <span class="technologies">${projet.technologies.join(", ")}</span></li>
           <br>
-          <li><span class="title">Résultats personnels:</span> <span class="resultats-personnels">${projet.resultatsPersonnels}</span></li>
+          <li><span class="title">Personal results:</span> <span class="resultats-personnels">${projet.resultatsPersonnels}</span></li>
         </ul>
       </div>
       <div class="image-container">

@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const cors = require('cors');  // Ajout du middleware CORS
+const cors = require('cors');  // Adding CORS middleware
 const port = 3000;
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
@@ -11,7 +11,7 @@ require('dotenv').config();
 
 app.use(express.static('public'));
 
-// Middleware CORS
+// CORS Middleware
 app.use(cors());
 
 app.use('/', weatherController);
@@ -27,18 +27,18 @@ app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
-// Route pour page accueil
+// Route for homepage
 app.get('/', function (req, res) {
   res.render('accueil.ejs');
 });
 
-app.get('/projet/:id', function (req, res) {
+app.get('/project/:id', function (req, res) {
   const id = req.params.id;
-  var projet = projets.find(p => p.id == id);
-  if (projet) {
-    res.render('pages/projet', { projet });
+  var project = projects.find(p => p.id == id);
+  if (project) {
+    res.render('pages/project', { project });
   } else {
-    // Gérer le cas où aucun projet n'est trouvé pour l'ID donné.
+    // Handle case where no project is found for the given ID.
     res.status(404).render('404.ejs');
   }
 });
@@ -47,10 +47,10 @@ app.get('/contact', function (_req, res) {
   res.render('contact');
 });
 
-// Configuration du serveur SMTP pour Nodemailer
+// SMTP server configuration for Nodemailer
 const mail_sender = 'your_email@example.com';
 
-// Configuration serveur SMTP copié depuis Mailtrap
+// SMTP server configuration copied from Mailtrap
 var transport = nodemailer.createTransport({
   host: "sandbox.smtp.mailtrap.io",
   port: 2525,
@@ -60,9 +60,9 @@ var transport = nodemailer.createTransport({
   }
 });
 
-// Fonction pour envoyer un courriel
-const sendEmail = (title, message, recipient, boisson) => {
-  const messageContent = `<p>${message}</p><p>Boisson préférée : ${boisson}</p>`;
+// Function to send an email
+const sendEmail = (title, message, recipient, drink) => {
+  const messageContent = `<p>${message}</p><p>Favorite Drink: ${drink}</p>`;
   
   transport.sendMail({
     from: mail_sender,
@@ -78,14 +78,14 @@ const sendEmail = (title, message, recipient, boisson) => {
   });
 };
 
-// Route pour traitement du formulaire de contact
+// Route for handling contact form submission
 app.post('/contact', function (req, res) {
-  const nom = req.body.nom;
+  const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message;
-  const boisson = req.body.boisson; // Récupérer la boisson préférée
+  const drink = req.body.drink; // Get favorite drink
 
-  sendEmail('Nouveau message de ' + nom, message, email, boisson);
+  sendEmail('New message from ' + name, message, email, drink);
   res.redirect('/');
 });
 
@@ -93,8 +93,8 @@ app.use(function(req, res, next) {
   res.status(404).render('404.ejs');
 });
 
-// gestion des erreurs
+// Error handling
 app.use(errorController.logErrors);
 
-// gestion des erreurs 404
+// 404 error handling
 app.use(errorController.get404);
