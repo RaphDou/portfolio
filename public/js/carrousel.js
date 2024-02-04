@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 4,
-      titre: "Projet Pokedex",
+      titre: "Pokedex",
       description:
         "Next.js project with a link to an existing API to display a library of pokemon.",
       image: "/images/pokedex.jpg",
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 5,
-      titre: "Projet Snippets",
+      titre: "Code Snippets",
       description:
         "A project to manage code snippets and personal notes attached to tags.",
       image: "/images/snippets.png",
