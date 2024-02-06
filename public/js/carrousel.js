@@ -43,18 +43,17 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 5,
       titre: "Code Snippets",
-      description:
-        "A project to manage code snippets and personal notes attached to tags.",
+      description: "A project to manage code snippets and personal notes attached to tags.",
       image: "/images/snippets.png",
       technologies: ["JavaScript, HTML, CSS, node.js, express.js"],
-      resultatsPersonnels:
-        "First use of node.js and express!",
+      resultatsPersonnels: "First use of node.js and express!",
+      lien: "https://code-snippets-gn4j.onrender.com"
     },
     {
       id: 6,
-      titre: "API and React",
+      titre: "Admin Panel",
       description:
-        "Next.js project with an API to manage fictitious online product sales.",
+        "Next.js team project with an API to manage fictitious online product sales.",
       image: "/images/ventes.jpg",
       technologies: ["JavaScript"],
       resultatsPersonnels:
