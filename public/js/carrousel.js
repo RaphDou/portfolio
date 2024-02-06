@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 1,
       titre: "Memory Game",
-      description:
-        "JS programming project in duo to create a memory game.",
+      description: "JS programming project in duo to create a memory game.",
       image: "/images/cartes.jpg",
       technologies: ["JavaScript, HTML, CSS"],
       resultatsPersonnels:
@@ -13,11 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 2,
       titre: "SAPAR",
-      description: "Final graphic design work done using Figma to create a fictional company.",
+      description:
+        "Final graphic design work done using Figma to create a fictional company.",
       image: "/images/figma.jpg",
       technologies: ["Figma"],
-      resultatsPersonnels: "Rewarding experience, showcasing creativity and interface design skills.",
-      lien: "https://www.figma.com/file/ZGtlHv40OP6SCxYY2iGwnd/TP3-Final?type=design&mode=design&t=hkWjkBlLcYGipNFx-1"
+      resultatsPersonnels:
+        "Rewarding experience, showcasing creativity and interface design skills.",
+      lien: "https://www.figma.com/file/ZGtlHv40OP6SCxYY2iGwnd/TP3-Final?type=design&mode=design&t=hkWjkBlLcYGipNFx-1",
     },
     {
       id: 3,
@@ -38,44 +39,50 @@ document.addEventListener("DOMContentLoaded", function () {
       technologies: ["Next.js"],
       resultatsPersonnels:
         "Good learning of Next.js, MUI library, and atomic design.",
-      lien: "https://pokedex-x1ux.onrender.com"
+      lien: "https://pokedex-x1ux.onrender.com",
     },
     {
       id: 5,
       titre: "Code Snippets",
-      description: "A project to manage code snippets and personal notes attached to tags.",
+      description:
+        "A project to manage code snippets and personal notes attached to tags.",
       image: "/images/snippets.png",
       technologies: ["JavaScript, HTML, CSS, node.js, express.js"],
       resultatsPersonnels: "First use of node.js and express!",
-      lien: "https://code-snippets-gn4j.onrender.com"
+      lien: "https://code-snippets-gn4j.onrender.com",
     },
     {
       id: 6,
       titre: "Admin Panel",
       description:
-        "Next.js team project with an API to manage fictitious online product sales.",
+        "Team project with an API to manage fictitious online product sales.",
       image: "/images/ventes.jpg",
-      technologies: ["JavaScript"],
+      technologies: ["Next.js"],
       resultatsPersonnels:
         "Good task management, time, and advanced functions with GitHub.",
+      lien: "https://my-vendor-hub.onrender.com",
     },
     {
       id: 7,
       titre: "Company's API Development",
-      description: "Our team worked full-time to develop a real company's API for building their website.",
+      description:
+        "Our team worked full-time to develop a real company's API for building their website.",
       image: "/images/qc.jpg",
       technologies: ["JavaScript, Node.js, Express.js, MongoDB"],
-      resultatsPersonnels: "Valuable experience in full-time project development, gaining insights into real-world website building.",
-      lien: "https://documenter.getpostman.com/view/27391458/2s9YeBfZhu#c486b50d-042b-48e1-9fe2-f128def284a3"
+      resultatsPersonnels:
+        "Valuable experience in full-time project development, gaining insights into real-world website building.",
+      lien: "https://documenter.getpostman.com/view/27391458/2s9YeBfZhu#c486b50d-042b-48e1-9fe2-f128def284a3",
     },
     {
       id: 8,
       titre: "WordPress shop",
-      description: "Building a WordPress website using WooCommerce to create a working e-commerce shop.",
+      description:
+        "Building a WordPress website using WooCommerce to create a working e-commerce shop.",
       image: "/images/wordpress.png",
       technologies: ["WordPress, WooCommerce"],
-      resultatsPersonnels: "Significant learning in CMS website building and leveraging plugins for enhanced functionality.",
-      lien: "https://clientsmystere.com/Groupe5/"
+      resultatsPersonnels:
+        "Significant learning in CMS website building and leveraging plugins for enhanced functionality.",
+      lien: "https://clientsmystere.com/Groupe5/",
     },
     {
       id: 9,
@@ -83,9 +90,8 @@ document.addEventListener("DOMContentLoaded", function () {
       description: "Who knows what awaits me!",
       image: "/images/idk.jpg",
       technologies: ["🤷"],
-      resultatsPersonnels:
-        "We'll see!",
-    }
+      resultatsPersonnels: "We'll see!",
+    },
   ];
 
   const swiperWrapper = document.querySelector(".swiper-wrapper");
@@ -95,15 +101,25 @@ document.addEventListener("DOMContentLoaded", function () {
     slide.className = "swiper-slide";
 
     const content = `
-    <div class="card-body-carrousel ${projet.lien ? 'clickable-card' : ''}">
+    <div class="card-body-carrousel ${projet.lien ? "clickable-card" : ""}">
       <div class="text-container">
-        <h5 class="projet-titre">${projet.lien ? `<a href="${projet.lien}" target="_blank">${projet.titre}</a>` : projet.titre}</h5>
+        <h5 class="projet-titre">${
+          projet.lien
+            ? `<a href="${projet.lien}" target="_blank">${projet.titre}</a>`
+            : projet.titre
+        }</h5>
         <ul>
-          <li><span class="title">Description:</span> <span class="description_project">${projet.description}</span></li>
+          <li><span class="title">Description:</span> <span class="description_project">${
+            projet.description
+          }</span></li>
           <br>
-          <li><span class="title">Technologies used:</span> <span class="technologies">${projet.technologies.join(", ")}</span></li>
+          <li><span class="title">Technologies used:</span> <span class="technologies">${projet.technologies.join(
+            ", "
+          )}</span></li>
           <br>
-          <li><span class="title">Personal results:</span> <span class="resultats-personnels">${projet.resultatsPersonnels}</span></li>
+          <li><span class="title">Personal results:</span> <span class="resultats-personnels">${
+            projet.resultatsPersonnels
+          }</span></li>
         </ul>
       </div>
       <div class="image-container">
@@ -111,7 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     </div>
   `;
-  
 
     slide.innerHTML = content;
     swiperWrapper.appendChild(slide);
