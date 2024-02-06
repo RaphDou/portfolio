@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+/* document.addEventListener("DOMContentLoaded", function () {
   const cursorTracker = document.getElementById("cursor-tracker");
 
   function updateCursorPosition(e) {
@@ -30,3 +30,4 @@ document.addEventListener("DOMContentLoaded", function () {
     cursorTracker.style.top = `${mouseY}px`;
   });
 });
+ */

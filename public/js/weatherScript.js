@@ -1,58 +1,58 @@
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('/weather')
-    .then(response => {
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/weather")
+    .then((response) => {
       if (!response.ok) {
-        throw new Error(`Erreur HTTP! Statut : ${response.status}`);
+        throw new Error(`HTTP Error! Status: ${response.status}`);
       }
       return response.json();
     })
-    .then(data => {
-      const weatherInfoElement = document.getElementById('weatherInfo');
+    .then((data) => {
+      const weatherInfoElement = document.getElementById("weatherInfo");
 
       if (data && data.main && data.weather && data.weather[0]) {
         const temperature = data.main.temp;
         const description = data.weather[0].description;
         const weatherEmoji = getWeatherEmoji(data.weather[0].main);
 
-        console.log('Données météorologiques reçues :', data); // Ajout du console.log
+        console.log("Weather data received:", data); // Added console.log
 
-        // Mise à jour du contenu de la balise li spécifique à la météo
-        weatherInfoElement.innerHTML = `Il fait actuellement ${temperature}°C à Québec. <span>${weatherEmoji}</span>`;
+        // Update content of the weather-specific list item
+        weatherInfoElement.innerHTML = `It is currently ${temperature}°C in Quebec. <span>${weatherEmoji}</span>`;
       } else {
-        console.error('Les données météorologiques ne sont pas dans le format attendu.', data);
+        console.error("Weather data is not in the expected format.", data);
       }
     })
-    .catch(error => {
-      console.error('Erreur lors de la récupération des données météorologiques', error);
+    .catch((error) => {
+      console.error("Error fetching weather data", error);
     });
 });
 
-// Fonction pour obtenir l'emoji en fonction de la condition météorologique principale
+// Function to get emoji based on main weather condition
 function getWeatherEmoji(weatherMain) {
   switch (weatherMain) {
-    case 'Clear':
-      return '☀️'; // Soleil
-    case 'Clouds':
-      return '☁️'; // Nuage
-    case 'Rain':
-      return '🌧️'; // Pluie
-    case 'Snow':
-      return '❄️'; // Neige
-    case 'Thunderstorm':
-      return '⛈️'; // Orage
-    case 'Drizzle':
-      return '🌦️'; // Bruine
-    case 'Mist':
-    case 'Smoke':
-    case 'Haze':
-    case 'Dust':
-    case 'Fog':
-    case 'Sand':
-    case 'Ash':
-    case 'Squall':
-    case 'Tornado':
-      return '🌫️'; // Conditions atmosphériques spéciales
+    case "Clear":
+      return "☀️"; // Sun
+    case "Clouds":
+      return "☁️"; // Cloud
+    case "Rain":
+      return "🌧️"; // Rain
+    case "Snow":
+      return "❄️"; // Snow
+    case "Thunderstorm":
+      return "⛈️"; // Thunderstorm
+    case "Drizzle":
+      return "🌦️"; // Drizzle
+    case "Mist":
+    case "Smoke":
+    case "Haze":
+    case "Dust":
+    case "Fog":
+    case "Sand":
+    case "Ash":
+    case "Squall":
+    case "Tornado":
+      return "🌫️"; // Special atmospheric conditions
     default:
-      return '🌍'; // Autre (terre)
+      return "🌍"; // Other (earth)
   }
 }
