@@ -9,7 +9,7 @@ router.get('/weather', async (req, res) => {
     // Remplacez les coordonnées ci-dessous par celles de votre emplacement
     const latitude = 45.5017;  // Exemple: Québec
     const longitude = -73.5673;  // Exemple: Québec
-    const apiKey = process.env.API_KEY;
+    const apiKey = process.env.WEATHER_API_KEY;
 
     const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
         params: {
