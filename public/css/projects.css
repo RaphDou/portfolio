@@ -1,0 +1,64 @@
+.image-container {
+  flex: 2;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 20px 20px 0;
+}
+
+.text-container {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projet-titre {
+  font-size: 4rem;
+  font-weight: 600;
+  position: absolute;
+  bottom: -1rem;
+  left: 85%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.description_project,
+.technologies,
+.resultats-personnels {
+  font-size: 1rem;
+  align-items: flex-start;
+}
+
+.card-body-carrousel {
+  height: 400px;
+  display: flex;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ececec;
+}
+.text-container a {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.text-container a:hover {
+  color: #111111;
+}
+
+.clickable-card {
+  border: 10px solid transparent;
+}
+
+.clickable-card:hover {
+  border-color: #be0b05;
+}
