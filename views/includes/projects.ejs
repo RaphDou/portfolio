@@ -13,7 +13,7 @@
           <p class="card-text mb-3">Technologies used: <%= projet.technologies.join(', ') %></p>
           <p class="card-text mb-3">Personal results: <%= projet.resultatsPersonnels %></p>
           <% if (projet.lien) { %>
-            <a href="<%= projet.lien %>" class="btn btn-light">Visit Project</a>
+            <a href="<%= projet.lien %>" class="btn btn-light" target="_blank">Visit Project</a>
           <% } %>
         </div>
       </div>
