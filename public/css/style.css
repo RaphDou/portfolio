@@ -1,4 +1,3 @@
-/* Global Styles */
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #111111;
@@ -41,7 +40,7 @@ video {
     height: 100%;
     background-color: #111;
     transition: width 0.3s ease-out;
-}
+} 
 
 .navbar:hover::before {
     width: 100%;
@@ -52,7 +51,6 @@ video {
     color: #fff !important;
 }
 
-/* Section Styles */
 section {
     min-height: 30rem;
     margin-bottom: 10rem;
@@ -74,28 +72,33 @@ section {
     font-size: 18px;
 }
 
-.footer {
+footer {
     margin-top: auto;
 }
 
-.footer .list-unstyled a {
-    color: #fff !important;
+footer .list-unstyled a {
+    color: inherit; /* Couleur de texte par défaut */
+    text-decoration: none; /* Supprimer le soulignement par défaut */
+    transition: color 0.3s ease; /* Animation de transition pour la couleur */
 }
 
-.footer .list-unstyled,
-.footer .card {
+footer .list-unstyled a:hover {
+    color: #ffffff; /* Changer la couleur au survol (blanc dans cet exemple) */
+}
+
+footer .list-unstyled,
+footer .card {
     color: #fff;
 }
 
-.footer .row {
+footer .row {
     justify-content: center;
 }
 
-.footer .col-md-4 {
+footer .col-md-4 {
     text-align: center;
-}
+} 
 
-/* Description Styles */
 .description {
     overflow: hidden;
     font-weight: 600;
@@ -105,12 +108,10 @@ section {
     position: relative;
 }
 
-/* Title Styles */
 .h1-title {
     font-size: 90px;
 }
 
-/* Cursor Styles */
 #cursor-tracker {
     position: absolute;
     width: 50px;
@@ -123,31 +124,23 @@ section {
     z-index: 1000;
 }
 
-/* Additional Styles */
 .text-smaller {
     font-size: 1.5rem;
 }
 
-/* Scrollbar Styles */
 ::-webkit-scrollbar {
-    width: 12px;
-    /* Largeur de la scrollbar */
+    width: 12px; /* Largeur de la scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #111;
-    /* Couleur de fond de la piste */
+    background-color: #111; /* Couleur de fond de la piste */
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #f1f1f1;
-    /* Couleur de la poignée de la scrollbar */
+    background-color: #f1f1f1; /* Couleur de la poignée de la scrollbar */
 }
 
-/* Custom Card Image Styles */
 .custom-card-img {
-    height: 25rem;
-    /* Définir la hauteur fixe souhaitée */
-    object-fit: cover;
-    /* Pour maintenir les proportions de l'image */
+    height: 25rem; /* Définir la hauteur fixe souhaitée */
+    object-fit: cover; /* Pour maintenir les proportions de l'image */
 }
