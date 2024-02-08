@@ -11,10 +11,10 @@ const projets = [
   {
     id: 1,
     titre: "Memory Game",
-    description: "JS programming project in duo to create a memory game.",
+    description: "",
     image: "/images/cartes.jpg",
-    technologies: ["JavaScript, HTML, CSS"],
-    resultatsPersonnels: "First experience in JS programming and GitHub. (Currently redoing)",
+    technologies: [""],
+    resultatsPersonnels: "(Currently redoing)",
   },
   {
     id: 2,
