@@ -1,20 +1,21 @@
 const projets = [
   {
     id: 0,
+    titre: "Memory Game",
+    description: "Classic memory card game developed using React and Next.js. Test your memory by matching pairs of cards!",
+    image: "/images/cartes.jpg",
+    technologies: ["React", "Next.js"],
+    resultatsPersonnels: "Enhanced skills in React development, state management, and creating interactive web applications.",
+    lien: "https://memory-game-fasi.onrender.com"
+  },
+  {
+    id: 1,
     titre: "Countries Explorer",
     description: "Web application that allows users to explore information about countries using the REST Countries API",
     image: "/images/earth.jpg",
     technologies: ["Next.js", "React", "JavaScript"],
     resultatsPersonnels: "This project allowed me to refine my skills in Next.js and REST API integrations.",
     lien: "https://countries-explorer.onrender.com"
-  },
-  {
-    id: 1,
-    titre: "Memory Game",
-    description: "",
-    image: "/images/cartes.jpg",
-    technologies: [""],
-    resultatsPersonnels: "(Currently redoing)",
   },
   {
     id: 2,
