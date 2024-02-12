@@ -1,2 +1,2 @@
 # portfolio
-EJS portfolio conmtaining general information and personnal projects of mine.
+EJS portfolio containing general information and personnal projects of mine.
