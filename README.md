@@ -1,2 +1,2 @@
 # portfolio
-Update of my portfolio, lots of upgrades still to be done!
+EJS portfolio conmtaining general information and personnal projects of mine.
